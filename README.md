@@ -33,7 +33,17 @@ there are tow options to mapping:
 	- step 1) Map class to database table
 	- step 2) map field to database columns
 
+### Develop Java Code to perform database operation, like save java object using hibernate.
 
+develop Java code to perform database operations. there are tow key player in hibernate:
+- 1) SessionFactory: Reads the hibernate config file, create Session object, Heavy-weight object, **only create once in your app** and then you can reuse it X number of time throughout the Application.
+	- This is a person that reads the hibernate config file, gets a connection to the database,and it'll create the session objects
+	- when SessionFactory created, it will create sessions(objects) the second player.
+	
+- 2) Session: Wraps around a JDBC connection to database. Main object used to save/retrieve objects to database. Short-live object. Retrieve from SessionFactory. 
+	- after Create Session from SessionFactory, It's short-live object, for a given method, you'll get a session, you'll use it then you'll throw it away and over and over when you need.
+	- the Session is retrieved from SessionFactory the previous player
 
+- to test save new Student object in database, need to create student table and has columns the same fields in student class.
 ---
 
