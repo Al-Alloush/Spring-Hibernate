@@ -12,3 +12,16 @@
 
 ## Test JDBC Connection, 
 - create a simple JBDC class to test the connection with MySql Server
+
+---
+
+## Hibernate Development process
+
+### Add Hibernate Configuration File
+Hibernate use JDBC in background for communicating with the database.
+- Create ``hibernate.cfg.xml`` file in *src root directory* to be available for hibernate to use it, because it has to be on the actual classpath of Application, note: can create it in other location .
+
+
+
+---
+
