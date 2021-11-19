@@ -23,5 +23,17 @@ Hibernate use JDBC in background for communicating with the database.
 
 
 
+### Annotate Java Class
+as for as terminology Hibernate has a concept of an Entity Class (java class that mapped to database table), it's like any other Java Class has fields getter & setter methods, then add annotation on it to mapping it a database table.
+
+there are tow options to mapping:
+
+- 1 - XML ``config file`` (old school legacy approach)
+- 2 - Java JPA Annotations (modern & preferred approach), JPA annotations are used in mapping java objects to the database tables.
+	- step 1) Map class to database table
+	- step 2) map field to database columns
+
+
+
 ---
 
