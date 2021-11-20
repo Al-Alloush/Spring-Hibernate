@@ -30,7 +30,7 @@ public class CreateStudentDemo {
 			
 			// create student object
 			System.out.println("Create a new Student object ...");
-			Student student = new Student("Ahmad", "Alloush", "alloush@gmail.com");
+			Student student = new Student("Jacks", "muller", "jacks@gmail.com");
 			
 			//start a transaction
 			session.beginTransaction();
@@ -45,6 +45,20 @@ public class CreateStudentDemo {
 			session.getTransaction().commit();
 			System.out.println("Done!");
 			
+			// get the student from database using Hibernate by id
+			
+			//create new Session to start transaction
+			session = sessionFactory.getCurrentSession();
+			session.beginTransaction();
+			
+			// retrieve student from database using Hibernate based on the Id
+			Student backStudent = session.get(Student.class, student.getId());
+			System.out.println("Get complete: " + student.toString());
+			
+			// commit the new transaction.
+			session.getTransaction().commit();
+			
+			System.out.println("get data from database Done!");
 			
 			
 		} finally {
