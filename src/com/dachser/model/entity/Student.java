@@ -2,6 +2,8 @@ package com.dachser.model.entity;
 
 // the standard implementation interfaces for Hibernate implement.
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -13,6 +15,12 @@ public class Student {
 	
 	// map the fields 
 	@Id
+	/* GenerationType
+	 * .Auto: Pick appropriate strategy for particular database
+	 * .Identity: Assign primary keys using database identity column(most commonly and popular strategy used for MySql)
+	 * .Sequence: Assign primary keys using database sequence (oracle database has this concept for row id.)
+	 * */
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
 	private int id;
 	
